@@ -1,0 +1,80 @@
+
+:root {
+    --backgroundLight: rgba(0,0,0,0.6);
+    --borderColor: #222;
+    --textColor: #EEEEEE;
+}
+
+#content {
+    background-image: url('./bakedPizza.jpeg');
+    position: fixed;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--textColor);
+    text-align: center;
+}
+
+#navPanel {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.9);
+    border-bottom: 1px solid var(--borderColor);
+    text-align: center;
+}
+
+#businessName {
+    padding-top: 25px;
+    font-family: 'Tangerine', cursive;
+    font-size: 95px;
+    font-weight: 500;
+}
+
+#bttnContainer {
+    padding-top: 25px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.bttns {
+    font-size: 19px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
+    padding: 20px;
+}
+
+.selected {
+    border-bottom: 2px solid var(--textColor);
+}
+
+#navContent {
+    width: 700px;
+    height: 100px;
+    background-color: var(--backgroundLight);
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    margin-top: 55px;
+    margin-bottom: 55px;
+    border: 1px solid var(--borderColor);
+    border-radius: 5px;
+}
+
+#gitHubInfo {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 45px;
+    box-sizing: border-box;
+    padding: 12px;
+    background-color: var(--backgroundLight);
+    border-top: 1px solid var(--borderColor);
+}
