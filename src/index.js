@@ -1,4 +1,6 @@
 
+import Logo from './gitHubLogo.png';
+import personPicture from './personPic.jpeg';
 
 function displayTemplate() {
     const content = document.getElementById('content');
@@ -14,15 +16,15 @@ function displayTemplate() {
     bttnContainer.id = 'bttnContainer';
     
     const bttn1 = document.createElement('button');
-    bttn1.innerText = 'Home';
+    bttn1.textContent = 'Home';
     bttn1.classList.add('bttns', 'selected');
 
     const bttn2 = document.createElement('button');
-    bttn2.innerText = 'Menu';
+    bttn2.textContent = 'Menu';
     bttn2.classList.add('bttns');
 
     const bttn3 = document.createElement('button');
-    bttn3.innerText = 'Contact';
+    bttn3.textContent = 'Contact';
     bttn3.classList.add('bttns');
 
     bttnContainer.appendChild(bttn1);
@@ -37,11 +39,36 @@ function displayTemplate() {
     const navContent = document.createElement('div');
     navContent.id = 'navContent';
 
-    const gitHubInfo = document.createElement('div');
-    gitHubInfo.id = 'gitHubInfo';
-    gitHubInfo.innerHTML = "Copyright © 2021 chejohn <a href = 'https://github.com/chejohn' target = '_blank'><img src = './gitHubLogo.png'></a>";
+    //tab specific code goes here
+    const firstMessage = document.createElement('div');
+    firstMessage.classList.add('message');
+    firstMessage.textContent = 'The best pizza in New York City';
+
+    const secondMessage = document.createElement('div');
+    secondMessage.classList.add('message');
+    secondMessage.textContent = 'Made with passion since 1908';
+
+    const personPic = new Image(350);
+    personPic.src = personPicture;
+    personPic.classList.add('message');
+    personPic.id = 'personPic';
+
+    const thirdMessage = document.createElement('div');
+    thirdMessage.classList.add('message');
+    thirdMessage.textContent = 'Visit us or order online!';
+
+    navContent.appendChild(firstMessage);
+    navContent.appendChild(secondMessage);
+    navContent.appendChild(personPic)
+    navContent.appendChild(thirdMessage);
+    // tab specific code ends here
 
     content.appendChild(navContent);
+
+    const gitHubInfo = document.createElement('div');
+    gitHubInfo.id = 'gitHubInfo';
+    gitHubInfo.innerHTML = `Copyright © 2021 chéjohn <a href = 'https://github.com/chejohn' target = '_blank'><img width = '16 id = 'gitHubLogo' src = ${Logo}></a>`;
+
     content.appendChild(gitHubInfo);
 
     
