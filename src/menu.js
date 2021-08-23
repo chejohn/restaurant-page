@@ -11,6 +11,8 @@ import pizza8 from './images/pizza8.png';
 
 
 function displayMenu(navContent) {
+    navContent.style.cssText = 'display: flex; justify-content: space-evenly; flex-wrap: wrap';
+    
     // 1st food container
     const foodContainer1 = document.createElement('div');
     foodContainer1.classList.add('foodContainer');
