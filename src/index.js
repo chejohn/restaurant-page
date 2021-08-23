@@ -1,6 +1,32 @@
 
-import Logo from './gitHubLogo.png';
-import personPicture from './personPic.jpeg';
+import Logo from './images/gitHubLogo.png';
+import personPicture from './images/personPic.jpeg';
+import displayMenu from './menu';
+
+
+function displayHome(navContent) {
+    const firstMessage = document.createElement('div');
+    firstMessage.classList.add('message');
+    firstMessage.textContent = 'The best pizza in New York City';
+
+    const secondMessage = document.createElement('div');
+    secondMessage.classList.add('message');
+    secondMessage.textContent = 'Made with passion since 1908';
+
+    const personPic = new Image(350);
+    personPic.src = personPicture;
+    personPic.classList.add('message');
+    personPic.id = 'personPic';
+
+    const thirdMessage = document.createElement('div');
+    thirdMessage.classList.add('message');
+    thirdMessage.textContent = 'Visit us or order online!';
+
+    navContent.appendChild(firstMessage);
+    navContent.appendChild(secondMessage);
+    navContent.appendChild(personPic)
+    navContent.appendChild(thirdMessage);
+}
 
 function displayTemplate() {
     const content = document.getElementById('content');
@@ -40,27 +66,7 @@ function displayTemplate() {
     navContent.id = 'navContent';
 
     //tab specific code goes here
-    const firstMessage = document.createElement('div');
-    firstMessage.classList.add('message');
-    firstMessage.textContent = 'The best pizza in New York City';
-
-    const secondMessage = document.createElement('div');
-    secondMessage.classList.add('message');
-    secondMessage.textContent = 'Made with passion since 1908';
-
-    const personPic = new Image(350);
-    personPic.src = personPicture;
-    personPic.classList.add('message');
-    personPic.id = 'personPic';
-
-    const thirdMessage = document.createElement('div');
-    thirdMessage.classList.add('message');
-    thirdMessage.textContent = 'Visit us or order online!';
-
-    navContent.appendChild(firstMessage);
-    navContent.appendChild(secondMessage);
-    navContent.appendChild(personPic)
-    navContent.appendChild(thirdMessage);
+    displayMenu(navContent);
     // tab specific code ends here
 
     content.appendChild(navContent);
@@ -70,8 +76,7 @@ function displayTemplate() {
     gitHubInfo.innerHTML = `Copyright © 2021 chéjohn <a href = 'https://github.com/chejohn' target = '_blank'><img width = '16 id = 'gitHubLogo' src = ${Logo}></a>`;
 
     content.appendChild(gitHubInfo);
-
-    
+  
     return content;
 }
 

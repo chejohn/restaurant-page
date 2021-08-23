@@ -3,10 +3,12 @@
     --backgroundLight: rgba(0,0,0,0.6);
     --borderColor: #222;
     --textColor: #EEEEEE;
+    --backgroundDark: rgba(0,0,0,0.9);
+    --backgroundHover: rgba(99,99, 99, 0.4);
 }
 
 #content {
-    background-image: url('./bakedPizza.jpeg');
+    background-image: url('./images/bakedPizza.jpeg');
     position: fixed;
     top: 0;
     bottom:0;
@@ -25,7 +27,7 @@
 }
 
 #navPanel {
-    background-color: rgba(0,0,0,0.9);
+    background-color: var(--backgroundDark);
     border-bottom: 1px solid var(--borderColor);
     text-align: center;
 }
@@ -69,12 +71,15 @@
     width: 700px;
     background-color: var(--backgroundLight);
     align-self: center;
-    display: inline-block;
     margin-top: 55px;
     margin-bottom: 55px;
     border: 1px solid var(--borderColor);
     border-radius: 5px;
     padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
 }
 
 #gitHubInfo {
@@ -98,8 +103,58 @@ a:hover {
     border-radius: 50%;
 }
 
-@media only screen and (max-width: 520px) {
+.foodContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 15px;
+    background-color: var(--backgroundLight);
+    width: 250px;
+    height: 270px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    margin: 20px;
+}
+
+.foodContainer:hover {
+    background-color: var(--backgroundHover);
+}
+
+.pizzaImages {
+    align-self: center;
+}
+
+.pizzaType {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.ingredients {
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
     #navContent {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .foodContainer {
+        width: 80vw;
+        margin: 20px;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+
+    .foodContainer {
+        width: 90vw;
+        margin: 0;
+    }
+
+    .foodContainer {
         transform: scale(0.8);
     }
 
