@@ -2,27 +2,8 @@
 import Logo from './images/gitHubLogo.png';
 import personPicture from './images/personPic.jpeg';
 import displayMenu from './menu';
-
-
-function displayHome(navContent) {
-    const firstMessage = document.createElement('div');
-    firstMessage.classList.add('message');
-    firstMessage.id = 'firstMessage';
-    firstMessage.textContent = 'The best pizza in New York City Made with passion since 1908';
-
-    const personPic = new Image(350);
-    personPic.src = personPicture;
-    personPic.classList.add('message');
-    personPic.id = 'personPic';
-
-    const secondMessage = document.createElement('div');
-    secondMessage.classList.add('message');
-    secondMessage.textContent = 'Visit us or order online!';
-
-    navContent.appendChild(firstMessage);
-    navContent.appendChild(personPic)
-    navContent.appendChild(secondMessage);
-}
+import displayHome from './home';
+import displayContact from './contact';
 
 function displayTemplate() {
     const content = document.getElementById('content');
@@ -62,7 +43,7 @@ function displayTemplate() {
     navContent.id = 'navContent';
 
     //tab specific code goes here
-    displayMenu(navContent);
+    displayContact(navContent);
     // tab specific code ends here
 
     content.appendChild(navContent);

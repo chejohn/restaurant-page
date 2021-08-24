@@ -7,6 +7,10 @@
     --backgroundHover: rgba(99,99, 99, 0.4);
 }
 
+* , *::before {
+    box-sizing: border-box;
+}
+
 #content {
     background-image: url('./images/bakedPizza.jpeg');
     position: fixed;
@@ -67,7 +71,6 @@
 }
 
 #navContent {
-    box-sizing: border-box;
     width: 700px;
     background-color: var(--backgroundLight);
     align-self: center;
@@ -80,7 +83,6 @@
 
 #gitHubInfo {
     height: 45px;
-    box-sizing: border-box;
     padding: 12px;
     background-color: var(--backgroundLight);
     border-top: 1px solid var(--borderColor);
@@ -131,11 +133,50 @@ a:hover {
     margin: 0;
 }
 
-#firstMessage {
-    box-sizing: border-box;
-    width: 350px;
-    display: inline-block;
-    line-height: 2.5;
+.contactInfo {
+    width: 400px;
+    font-size: 16px;
+    margin: 10px;
+    margin-left: 0;
+    text-align: left;
+}
+
+#messageUs {
+    font-size: 18px;
+    font-weight: 900;
+}
+
+#messageUs::before {
+    content: url('./images/mailIcon.svg');
+}
+
+.contactInfo::before {
+    margin-right: 5px;
+}
+
+#address::before {
+    content: url('./images/locationIcon.svg');
+}
+
+#timeOpen::before {
+    content: url('./images/clockIcon.svg');
+}
+
+#phoneNum::before {
+    content: url('./images/phoneIcon.svg');
+}
+
+.inputs {
+    display: block;
+    width: 80%;
+    margin: 20px;
+    margin-left: 0;
+    font-size: 17px;
+    color: inherit;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--textColor);
 }
 
 @media only screen and (max-width: 600px) {
@@ -172,7 +213,7 @@ a:hover {
 
     .message {
        font-size: 17px;
-       margin: 0;
+       margin: 0px;
     }
 
     #personPic {
