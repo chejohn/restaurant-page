@@ -11,6 +11,10 @@
     box-sizing: border-box;
 }
 
+#navContent > * {
+    animation: showContent 0.8s ease;
+}
+
 #content {
     background-image: url('./images/bakedPizza.jpeg');
     position: fixed;
@@ -67,7 +71,7 @@
 }
 
 .selected {
-    border-bottom: 2px solid var(--textColor);
+    border-bottom: 1px solid var(--textColor);
 }
 
 #navContent {
@@ -94,7 +98,7 @@ a:hover {
 }
 
 .message {
-    margin: 20px;
+    margin: 15px;
 }
 
 #personPic {
@@ -170,14 +174,14 @@ a:hover {
 .inputs:focus ~.placeHolder, .inputs:not(:focus):valid ~ .placeHolder{
     bottom: 28px;
     font-size: 10px;
-    opacity: 1;
 }
 
 .placeHolder {
     position: absolute;
     bottom: 0px;
-    opacity: 0.7;
     transition: 0.2s ease;
+    z-index: -1;
+    color: white;
 }
 
 .inputs {
@@ -225,6 +229,16 @@ iframe {
     height: 100%;
 }
 
+@keyframes showContent {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 
 @media only screen and (max-width: 600px) {
     #navContent {
@@ -238,9 +252,15 @@ iframe {
     }
 
     #form, #googleMap, #messageInput, .contactInfo {
-        width: 80vw;
+        width: 90vw;
         font-size: 16px;
     }
+
+    .message:first-of-type:not(#personPic){
+        margin-bottom: 10px;
+    }
+
+    
 }
 
 @media only screen and (max-width: 530px) {
@@ -265,7 +285,7 @@ iframe {
 
     .message {
        font-size: 17px;
-       margin: 0px;
+       margin: 0;
     }
 
     #personPic {

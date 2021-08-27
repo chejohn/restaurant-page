@@ -18,18 +18,12 @@ function displayTemplate() {
 
     const bttnContainer = document.createElement('div');
     bttnContainer.id = 'bttnContainer';
+
+    const bttn1 = createNavBttns('Home');
     
-    const bttn1 = document.createElement('button');
-    bttn1.textContent = 'Home';
-    bttn1.classList.add('bttns');
+    const bttn2 = createNavBttns('Menu');
 
-    const bttn2 = document.createElement('button');
-    bttn2.textContent = 'Menu';
-    bttn2.classList.add('bttns');
-
-    const bttn3 = document.createElement('button');
-    bttn3.textContent = 'Contact';
-    bttn3.classList.add('bttns', 'selected');
+    const bttn3 = createNavBttns('Contact');
 
     bttnContainer.appendChild(bttn1);
     bttnContainer.appendChild(bttn2);
@@ -44,7 +38,6 @@ function displayTemplate() {
     navContent.id = 'navContent';
 
     //tab specific code goes here
-    displayMenu(navContent);
     // tab specific code ends here
 
     content.appendChild(navContent);
@@ -55,7 +48,38 @@ function displayTemplate() {
 
     content.appendChild(gitHubInfo);
   
-    return content;
+    return navContent;
 }
 
-document.body.appendChild(displayTemplate());
+function changeTab() {
+    const bttns = navContent.previousElementSibling.childNodes[1].childNodes;
+
+    for (let i = 0; i < 3; i++) {
+        if (bttns[i].classList[1] === 'selected')
+            bttns[i].classList.remove('selected');
+            this.classList.add('selected');
+    }
+
+    while (navContent.firstChild) {
+        navContent.removeChild(navContent.firstChild);
+    }
+
+    if (this.textContent === 'Home') displayHome(navContent);
+    else if (this.textContent === 'Menu') displayMenu(navContent);
+    else displayContact(navContent);
+
+}
+
+function createNavBttns(bttnText) {
+    const button = document.createElement('button');
+    button.textContent = bttnText;
+    button.className = 'bttns';
+    button.addEventListener('click', changeTab)
+
+    if (bttnText == 'Home') button.classList.add('selected');
+    return button;
+}
+
+const navContent = displayTemplate();
+displayHome(navContent);
+
