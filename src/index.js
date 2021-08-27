@@ -6,6 +6,7 @@ import displayHome from './home';
 import displayContact from './contact';
 
 function displayTemplate() {
+    
     const content = document.getElementById('content');
     
     const navPanel = document.createElement('div');
@@ -20,7 +21,7 @@ function displayTemplate() {
     
     const bttn1 = document.createElement('button');
     bttn1.textContent = 'Home';
-    bttn1.classList.add('bttns', 'selected');
+    bttn1.classList.add('bttns');
 
     const bttn2 = document.createElement('button');
     bttn2.textContent = 'Menu';
@@ -28,7 +29,7 @@ function displayTemplate() {
 
     const bttn3 = document.createElement('button');
     bttn3.textContent = 'Contact';
-    bttn3.classList.add('bttns');
+    bttn3.classList.add('bttns', 'selected');
 
     bttnContainer.appendChild(bttn1);
     bttnContainer.appendChild(bttn2);
@@ -43,7 +44,7 @@ function displayTemplate() {
     navContent.id = 'navContent';
 
     //tab specific code goes here
-    displayContact(navContent);
+    displayMenu(navContent);
     // tab specific code ends here
 
     content.appendChild(navContent);

@@ -78,7 +78,7 @@
     margin-bottom: 55px;
     border: 1px solid var(--borderColor);
     border-radius: 5px;
-    padding: 20px;
+    padding: 35px;
 }
 
 #gitHubInfo {
@@ -134,11 +134,8 @@ a:hover {
 }
 
 .contactInfo {
-    width: 400px;
-    font-size: 16px;
     margin: 10px;
     margin-left: 0;
-    text-align: left;
 }
 
 #messageUs {
@@ -166,18 +163,68 @@ a:hover {
     content: url('./images/phoneIcon.svg');
 }
 
+.inputContainer {
+    position: relative;
+}
+
+.inputs:focus ~.placeHolder, .inputs:not(:focus):valid ~ .placeHolder{
+    bottom: 28px;
+    font-size: 10px;
+    opacity: 1;
+}
+
+.placeHolder {
+    position: absolute;
+    bottom: 0px;
+    opacity: 0.7;
+    transition: 0.2s ease;
+}
+
 .inputs {
     display: block;
-    width: 80%;
-    margin: 20px;
-    margin-left: 0;
-    font-size: 17px;
+    width: 350px;
+    margin: 30px;
     color: inherit;
     background-color: transparent;
     outline: none;
     border: none;
     border-bottom: 1px solid var(--textColor);
+    font-size: inherit;
+    font-family: inherit;
+    margin-left: 0;
 }
+
+#messageInput {
+    width: 500px;
+}
+
+input[type = 'submit'] {
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: 900;
+    background-color: var(--textColor);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px 5px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type = 'submit']:hover {
+    opacity: 0.5;
+} 
+
+#googleMap {
+    margin-top: 30px;
+    width: 600px;
+    height: 400px;
+} 
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
 
 @media only screen and (max-width: 600px) {
     #navContent {
@@ -186,8 +233,13 @@ a:hover {
     }
     
     .foodContainer {
-        width: 80vw;
+        width: 90vw;
         margin: 20px;
+    }
+
+    #form, #googleMap, #messageInput, .contactInfo {
+        width: 80vw;
+        font-size: 16px;
     }
 }
 
@@ -219,4 +271,36 @@ a:hover {
     #personPic {
         transform: scale(0.8);
     }
+
+}
+
+@media only screen and (max-width: 400px){
+
+    #bttnContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+    .bttns {
+        width: 120px;
+    }
+
+    .inputs, #googleMap, #messageInput, .contactInfo, #messageUs {
+        width: 90vw;
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    
+    #navPanel > * {
+        transform: scale(0.8);
+    }
+
+    #personPic, .message {
+        transform: scale(0.7);
+    }
+
 }

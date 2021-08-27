@@ -9,8 +9,10 @@ import pizza6 from './images/pizza6.png';
 import pizza7 from './images/pizza7.png';
 import pizza8 from './images/pizza8.png';
 
+// try condensing this code into a food-container function
 
 function displayMenu(navContent) {
+    
     navContent.style.cssText = 'display: flex; justify-content: space-evenly; flex-wrap: wrap';
     
     // 1st food container
@@ -189,6 +191,10 @@ function displayMenu(navContent) {
     navContent.appendChild(foodContainer6);
     navContent.appendChild(foodContainer7);
     navContent.appendChild(foodContainer8);
+}
+
+function createFoodContainer() {
+    
 }
 
 export default displayMenu;

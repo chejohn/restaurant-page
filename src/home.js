@@ -1,5 +1,8 @@
 
+import personPicture from './images/personPic.jpeg';
+
 function displayHome(navContent) {
+    
     const firstMessage = document.createElement('div');
     firstMessage.classList.add('message');
     firstMessage.textContent = 'The best pizza in New York City';
@@ -23,4 +26,4 @@ function displayHome(navContent) {
     navContent.appendChild(thirdMessage);
 }
 
-export default displayHome
+export default displayHome;
