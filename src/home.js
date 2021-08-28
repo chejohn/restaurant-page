@@ -11,13 +11,13 @@ function displayHome(navContent) {
     personPic.src = personPicture;
     personPic.className = 'message';
     personPic.id = 'personPic';
-    personPic.style.cssText = 'align-self: center;'
+    personPic.style.cssText = 'align-self: center;';
 
     const thirdMessage = createMessage('Visit us or order online!');
 
     navContent.appendChild(firstMessage);
     navContent.appendChild(secondMessage);
-    navContent.appendChild(personPic)
+    navContent.appendChild(personPic);
     navContent.appendChild(thirdMessage);
 }
 
