@@ -9,7 +9,7 @@ function displayHome(navContent) {
 
     const personPic = new Image(350);
     personPic.src = personPicture;
-    personPic.classList.add('message');
+    personPic.className = 'message';
     personPic.id = 'personPic';
     personPic.style.cssText = 'align-self: center;'
 

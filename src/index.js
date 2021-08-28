@@ -1,6 +1,5 @@
 
 import Logo from './images/gitHubLogo.png';
-import personPicture from './images/personPic.jpeg';
 import displayMenu from './menu';
 import displayHome from './home';
 import displayContact from './contact';
@@ -37,9 +36,6 @@ function displayTemplate() {
     const navContent = document.createElement('div');
     navContent.id = 'navContent';
 
-    //tab specific code goes here
-    // tab specific code ends here
-
     content.appendChild(navContent);
 
     const gitHubInfo = document.createElement('div');
@@ -54,10 +50,12 @@ function displayTemplate() {
 function changeTab() {
     const bttns = navContent.previousElementSibling.childNodes[1].childNodes;
 
-    for (let i = 0; i < 3; i++) {
-        if (bttns[i].classList[1] === 'selected')
-            bttns[i].classList.remove('selected');
+    for (let bttn of bttns) {
+        if (bttn.classList.length === 2) {
+            bttn.classList.remove('selected');
             this.classList.add('selected');
+            break;
+        }
     }
 
     while (navContent.firstChild) {
