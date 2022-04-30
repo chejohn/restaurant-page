@@ -3,6 +3,7 @@ import Logo from './images/gitHubLogo.png';
 import displayMenu from './menu';
 import displayHome from './home';
 import displayContact from './contact';
+import './style.css';
 
 function displayTemplate() {
     
